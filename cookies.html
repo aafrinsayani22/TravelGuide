@@ -1,0 +1,121 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <!-- First Name, Last Name
+     Desription:
+	 Date:                  -->
+  <title>Content Page</title>
+  <link rel="stylesheet" href="../css/general.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="./img/favicon.ico" />
+  <style>
+    a:-webkit-any-link {
+      text-decoration: none;
+      color: #8c1937;
+    }
+  </style>
+  
+
+</head>
+
+
+<body bgcolor="#F7F7F7">
+
+
+  <section id="top" class="section-head">
+    <div class="head">
+      <div class="head-text-box">
+        <p class="head-description">
+            Your Details are Being fetched by javascript cookies.   
+          </p>
+          <p> 
+              <h2 style="text-align: center;" class="heading-primary">
+            Hello <span id="firstname" style="text-align: center;" class="heading-primary">
+                User
+             </span>!
+          </h2>
+          </p>
+       
+        <p>
+            <h2 style="text-align: center;" class="heading-primary">
+            LastName : <span id="lastname" style="text-align: center;" class="heading-primary">
+                User </span>
+          </h2>
+          
+        </p>
+        <p>
+            <h2 style="text-align: center;" class="heading-primary">
+                Phone :<span id="phone" style="text-align: center;" class="heading-primary">
+                    User
+             </span>
+            </h2>
+            
+        </p>
+        <p>
+            <h2 style="text-align: center;" class="heading-primary">
+                E-mail :  <span id="email" style="text-align: center;" class="heading-primary">
+                    User
+         </span>
+        </h2>
+        
+        </p>
+        <p>
+            <h2 style="text-align: center;" class="heading-primary">
+                Country visited : <span id="visited" style="text-align: center;" class="heading-primary">
+                    User
+         </span>
+        </h2>
+        
+        </p>
+        <p>
+          <h2 style="text-align: center;" class="heading-primary">
+              Submittion Time : <span id="submitTime" style="text-align: center;" class="heading-primary">
+                  User
+       </span> seconds.
+      </h2>
+      
+      </p>
+       
+        
+
+        
+
+
+      </div>
+
+    </div>
+  </section>
+
+  
+
+</body>
+<script>
+    function getCookie(cname) {
+              let name = cname + "=";
+              let decodedCookie = decodeURIComponent(document.cookie);
+              let ca = decodedCookie.split(';');
+              for (let i = 0; i < ca.length; i++) {
+                  let c = ca[i];
+                  while (c.charAt(0) == ' ') {
+                      c = c.substring(1);
+                  }
+                  if (c.indexOf(name) == 0) {
+                      return c.substring(name.length, c.length);
+                  }
+              }
+              return "";
+          }
+
+  document.getElementById("firstname").innerHTML = getCookie("firstname");
+  document.getElementById("lastname").innerHTML = getCookie("lastname");
+  document.getElementById("phone").innerHTML = getCookie("Phone");
+  document.getElementById("email").innerHTML = getCookie("email");
+  document.getElementById("visited").innerHTML = getCookie("country");
+  document.getElementById("submitTime").innerHTML = getCookie("submitTime");
+
+  </script>
+
+</html>

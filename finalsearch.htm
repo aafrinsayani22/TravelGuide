@@ -1,0 +1,729 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <!-- Aafrin Sayani 
+     Desription:
+	 Date:                  -->
+  <title>Locations</title>
+
+  <link rel="stylesheet" href="css/general.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* h1 {
+            margin-top: 10px;
+            text-align: center;
+            background-color: "#e8d1d7";
+
+        } */
+  </style>
+</head>
+<script>
+  document.getElementById('username').style.height = "300px";
+  document.getElementById('password').style.fontSize = "20pt";
+  function getPlanet(namep) {
+    document.getElementById("ptextbox").value = namep;
+  }
+
+  function searchPlanetSwitch() {
+    var arrName = ['canada', 'usa', 'europe', 'asia', 'australia'];
+    var arrDia = ["We've heard Toronto described as New York City run by the Swiss, and it's true—you can find world-class theatre, shopping and restaurants here, but the sidewalks are clean and the people are friendly. The best place to start is literally at the top—the CN Tower, the tallest freestanding structure in the Western Hemisphere.", "The tallest buildings, biggest museums, and best pizza—NYC is a city of superlatives, and it lives up to every one of them. From the dazzling spectacle of Broadway to MoMA’s world-class galleries, the boutiques of SoHo, and the array of restaurants offering cuisines from every corner of the world, there’s a different New York to discover every time you visit. ", "London is layered with history, where medieval and Victorian complement a rich and vibrant modern world. The Tower of London and Westminster neighbour local pubs and markets, and time-worn rituals like the changing of the guards take place as commuters rush to catch the Tube. It’s a place where travellers can time-hop through the city, and when they’re weary, do as Londoners do and grab a “cuppa” tea.", "This tiny island city-state is a study of fusions and contrasts bursting with wonders waiting to be explored. Tranquil parks abut futuristic skyscrapers and luxe shopping centres. A thriving street food scene and world-class restaurants offer countless ways to taste and sip your way through Singapore’s culinary melting pot. Your first trip to Singapore will prove that sometimes the best things come in small packages.", "Sydney offers an urban mix of rich history and contemporary buzz, but with a distinctly Australian spirit. To understand why this city is so singular, take the clifftop coastal walk from Bondi to Coogee, where you’ll pass by beaches, rock pools, and lush parks. Then there’s the marvellous Sydney Opera House—jutting up like a great origami sailboat—anchoring the city’s iconic harbour."];
+    var arrImages = ["./Img/Toronto.jpg", "./Img/usa.jpg", "./Img/london.jpg", "./Img/asia.jpg", "./Img/australia.jpg"];
+    var pn = document.getElementById("ptextbox").value.toLowerCase();
+
+    switch (pn) {
+      case "canada":
+        {
+          document.getElementById("pname").innerHTML = "Toronto, " + arrName[0].toUpperCase();
+          document.getElementById("pimg").src = arrImages[0];
+          document.getElementById("pdetail").innerHTML = arrDia[0];
+          break;
+        }
+      case "usa":
+        {
+          document.getElementById("pname").innerHTML = "New York, " + arrName[1].toUpperCase();
+          document.getElementById("pimg").src = arrImages[1];
+          document.getElementById("pdetail").innerHTML = arrDia[1];
+          break;
+        }
+      case "europe":
+        {
+          document.getElementById("pname").innerHTML = "London, England ";
+          document.getElementById("pimg").src = arrImages[2];
+          document.getElementById("pdetail").innerHTML = arrDia[2];
+          break;
+        }
+      case "asia":
+        {
+          document.getElementById("pname").innerHTML = "Singapore, " + arrName[3].toUpperCase();
+          document.getElementById("pimg").src = arrImages[3];
+          document.getElementById("pdetail").innerHTML = arrDia[3];
+          break;
+        }
+      case "australia":
+        {
+          document.getElementById("pname").innerHTML = "Sydney, " + arrName[4].toUpperCase();
+          document.getElementById("pimg").src = arrImages[4];
+          document.getElementById("pdetail").innerHTML = arrDia[4];
+          break;
+        }
+      // case "jupiter":
+      // 	{
+      // 		document.getElementById("pname").innerHTML = arrName[5];
+      // 		document.getElementById("pimg").src = arrImages[5];
+      // 		document.getElementById("pdetail").innerHTML = "Orbit: " + arrDistance[5] + " km (0.38 AU) from Sun and the diameter is: " + arrDia[5] + " km";
+      // 		break;
+      // 	}
+      // case "saturn":
+      // 	{
+      // 		document.getElementById("pname").innerHTML = arrName[6];
+      // 		document.getElementById("pimg").src = arrImages[6];
+      // 		document.getElementById("pdetail").innerHTML = "Orbit: " + arrDistance[6] + " km (0.38 AU) from Sun and the diameter is: " + arrDia[6] + " km";
+      // 		break;
+      // 	}
+      // case "uranus":
+      // 	{
+      // 		document.getElementById("pname").innerHTML = arrName[7];
+      // 		document.getElementById("pimg").src = arrImages[7];
+      // 		document.getElementById("pdetail").innerHTML = "Orbit: " + arrDistance[7] + " km (0.38 AU) from Sun and the diameter is: " + arrDia[7] + " km";
+      // 		break;
+      // 	}
+      // case "neptune":
+      // 	{
+      // 		document.getElementById("pname").innerHTML = arrName[8];
+      // 		document.getElementById("pimg").src = arrImages[8];
+      // 		document.getElementById("pdetail").innerHTML = "Orbit: " + arrDistance[8] + " km (0.38 AU) from Sun and the diameter is: " + arrDia[8] + " km";
+      // 		break;
+      // 	}
+      default:
+        {
+          alert('Unknown Planet');
+          document.getElementById("pname").innerHTML = "Unknown";
+          document.getElementById("pimg").src = "./Img/404.jpg";
+          document.getElementById("pdetail").innerHTML = "Recommended search: Canada, USA, Europe, Asia, Australia.";
+        }
+    }
+  }
+
+
+</script>
+
+<body bgcolor="#F7F7F7">
+
+  <div id="top" style="text-align: center;" class="plan1">
+    <h1>Our Best Trips Around the Globe</h1>
+
+  </div>
+  <a name="top"></a>
+
+  <div style="text-align: center;" class="plan1">
+
+    <br />Enter the name of the Continent:
+    <input type="text" id="ptextbox"></input>
+
+    <button type="button" onclick="searchPlanetSwitch()">Search</button><br><br>
+    <!--button type="button" onclick="searchPlanetSwitch()">Search</button-->
+  </div>
+  <br />
+
+  <div class="row">
+    <h2 id="pname">Country Name</h2>
+    <p style="text-align: left; font-size:x-large;" id="pdetail">City Description</p>
+  </div>
+  <div class="row">
+    <img id="pimg" src="" alt="City Image" width="100%" height="100%" />
+
+  </div>
+
+  <br /><br /><br /><br />
+
+
+  <p>
+  </p>
+  <a href="#Top">Go to the top</a>
+  </div>
+
+
+
+  <!-- <section class="section-trips">
+    <div class="container center-text">
+      <span class="subheading">South & Caribbean</span>
+      <h2 class="heading-secondary">
+        We have an extensive selection of fabulous destinations in Mexico, The Caribbean, and more. Choose from
+        all-inclusive or a la carte, for a family getaway, romantic retreat – whatever you’re looking for, you’ll find
+        it right here!
+      </h2>
+    </div>
+
+    <div class="container grid grid--4-cols margin-bottom-md">
+
+
+      <div class="trip">
+        <img src="img/cuba-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">Vegetarian</span>
+          </div>
+          <p class="trip-title">Cuba</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Havana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Cayo Coco</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Varadero</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Dominican-republic-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">$2200</span>
+          </div>
+          <p class="trip-title">Dominican Republic</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Punta Cana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Puerto Plata</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Santo Domingo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Honduras.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">$1900</span>
+          </div>
+          <p class="trip-title">Honduras</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Lake Yojoa</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Utila Islands</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Roatán Islands</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Mexico.jpg" class="trip-img" alt="Avocado Salad" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--rPrice">$1600</span>
+
+          </div>
+          <p class="trip-title">Mexico</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span><strong>400</strong> calories</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>NutriScore &reg; <strong>92</strong></span>
+            </li>
+            <li class="trip-attribute">
+
+              <span><strong>4.8</strong> rating (441)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align: right; padding-right: 1rem;"><a class="main-nav-link nav-cta" href="#top">Top</a></div>
+
+  </section>
+
+  <section id="canada" class="section-trips">
+    <div class="container center-text">
+      <span class="subheading">Europe</span>
+      <h2 class="heading-secondary">
+        We have an extensive selection of fabulous destinations in Europe, The Caribbean, and more. Choose from
+        all-inclusive or a la carte, for a family getaway, romantic retreat – whatever you’re looking for, you’ll find
+        it right here!
+      </h2>
+    </div>
+
+    <div class="container grid grid--4-cols margin-bottom-md">
+
+
+      <div class="trip">
+        <img src="img/Portugal.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">Vegetarian</span>
+          </div>
+          <p class="trip-title">Portugal</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Havana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Cayo Coco</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Varadero</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Dominican-republic-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">Vegetarian</span>
+          </div>
+          <p class="trip-title">Dominican Republic</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Punta Cana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Puerto Plata</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Santo Domingo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Honduras.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">Vegetarian</span>
+          </div>
+          <p class="trip-title">Honduras</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span><strong>650</strong> calories</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>NutriScore &reg; <strong>74</strong></span>
+            </li>
+            <li class="trip-attribute">
+
+              <span><strong>4.9</strong> rating (537)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Mexico.jpg" class="trip-img" alt="Avocado Salad" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--rPrice">Vegan</span>
+            <span class="tag tag--discount">Paleo</span>
+          </div>
+          <p class="trip-title">Mexico</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span><strong>400</strong> calories</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>NutriScore &reg; <strong>92</strong></span>
+            </li>
+            <li class="trip-attribute">
+
+              <span><strong>4.8</strong> rating (441)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align: right; padding-right: 1rem;"><a class="main-nav-link nav-cta" href="#top">Top</a></div>
+
+  </section>
+
+  <section class="section-trips">
+    <div class="container center-text">
+      <span class="subheading">South & Caribbean</span>
+      <h2 class="heading-secondary">
+        We have an extensive selection of fabulous destinations in Mexico, The Caribbean, and more. Choose from
+        all-inclusive or a la carte, for a family getaway, romantic retreat – whatever you’re looking for, you’ll find
+        it right here!
+      </h2>
+    </div>
+
+    <div class="container grid grid--4-cols margin-bottom-md">
+
+
+      <div class="trip">
+        <img src="img/cuba-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">Vegetarian</span>
+          </div>
+          <p class="trip-title">Cuba</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Havana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Cayo Coco</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Varadero</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Dominican-republic-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">$2200</span>
+          </div>
+          <p class="trip-title">Dominican Republic</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Punta Cana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Puerto Plata</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Santo Domingo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Honduras.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">$1900</span>
+          </div>
+          <p class="trip-title">Honduras</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Lake Yojoa</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Utila Islands</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Roatán Islands</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Mexico.jpg" class="trip-img" alt="Avocado Salad" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--rPrice">$1600</span>
+
+          </div>
+          <p class="trip-title">Mexico</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span><strong>400</strong> calories</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>NutriScore &reg; <strong>92</strong></span>
+            </li>
+            <li class="trip-attribute">
+
+              <span><strong>4.8</strong> rating (441)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align: right; padding-right: 1rem;"><a class="main-nav-link nav-cta" href="#top">Top</a></div>
+
+  </section>
+
+  <section class="section-trips">
+    <div class="container center-text">
+      <span class="subheading">South & Caribbean</span>
+      <h2 class="heading-secondary">
+        We have an extensive selection of fabulous destinations in Mexico, The Caribbean, and more. Choose from
+        all-inclusive or a la carte, for a family getaway, romantic retreat – whatever you’re looking for, you’ll find
+        it right here!
+      </h2>
+    </div>
+
+    <div class="container grid grid--4-cols margin-bottom-md">
+
+
+      <div class="trip">
+        <img src="img/cuba-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">Vegetarian</span>
+          </div>
+          <p class="trip-title">Cuba</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Havana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Cayo Coco</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Varadero</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Dominican-republic-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">$2200</span>
+          </div>
+          <p class="trip-title">Dominican Republic</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Punta Cana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Puerto Plata</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Santo Domingo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Honduras.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">$1900</span>
+          </div>
+          <p class="trip-title">Honduras</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Lake Yojoa</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Utila Islands</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Roatán Islands</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Mexico.jpg" class="trip-img" alt="Avocado Salad" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--rPrice">$1600</span>
+
+          </div>
+          <p class="trip-title">Mexico</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span><strong>400</strong> calories</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>NutriScore &reg; <strong>92</strong></span>
+            </li>
+            <li class="trip-attribute">
+
+              <span><strong>4.8</strong> rating (441)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align: right; padding-right: 1rem;"><a class="main-nav-link nav-cta" href="#top">Top</a></div>
+
+  </section>
+
+  <section class="section-trips">
+    <div class="container center-text">
+      <span class="subheading">South & Caribbean</span>
+      <h2 class="heading-secondary">
+        We have an extensive selection of fabulous destinations in Mexico, The Caribbean, and more. Choose from
+        all-inclusive or a la carte, for a family getaway, romantic retreat – whatever you’re looking for, you’ll find
+        it right here!
+      </h2>
+    </div>
+
+    <div class="container grid grid--4-cols margin-bottom-md">
+
+
+      <div class="trip">
+        <img src="img/cuba-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">Vegetarian</span>
+          </div>
+          <p class="trip-title">Cuba</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Havana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Cayo Coco</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Varadero</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Dominican-republic-small.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">$2200</span>
+          </div>
+          <p class="trip-title">Dominican Republic</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Punta Cana</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Puerto Plata</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Santo Domingo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Honduras.jpg" class="trip-img" alt="Japanese Gyozas" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--price">$1900</span>
+          </div>
+          <p class="trip-title">Honduras</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span>Lake Yojoa</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Utila Islands</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>Roatán Islands</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trip">
+        <img src="img/Mexico.jpg" class="trip-img" alt="Avocado Salad" />
+        <div class="trip-content">
+          <div class="trip-tags">
+            <span class="tag tag--rPrice">$1600</span>
+
+          </div>
+          <p class="trip-title">Mexico</p>
+          <ul class="trip-attributes">
+            <li class="trip-attribute">
+
+              <span><strong>400</strong> calories</span>
+            </li>
+            <li class="trip-attribute">
+
+              <span>NutriScore &reg; <strong>92</strong></span>
+            </li>
+            <li class="trip-attribute">
+
+              <span><strong>4.8</strong> rating (441)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align: right; padding-right: 1rem;"><a class="main-nav-link nav-cta" href="#top">Top</a></div>
+
+  </section> -->
+
+</body>
+
+</html>

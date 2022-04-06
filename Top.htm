@@ -1,0 +1,96 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <!--Aafrin Sayani
+     Description: The top page of the first page
+   Date:  09 November 2021                  -->
+
+  <link rel="stylesheet" href="css/general.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+
+
+  <script type="text/javascript" src="login.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<script>
+  function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function checkCookie() {
+    let user = getCookie("username");
+    if (user != "") {
+      alert("Welcome again " + user);
+    } else {
+      user = prompt("Please enter your name:", "");
+      if (user != "" && user != null) {
+        setCookie("username", user, 30);
+      }
+    }
+  }
+</script>
+
+<title>Top Page</title>
+</head>
+
+<body bgcolor="#8c1937" onload="load()" onload="checkCookie()">
+  <table border=" 0" width="100%">
+    <tr>
+      <td align="center" bgcolor="#e8d1d7">
+        <header>
+          <a href="#">
+            <img alt="Aafrin Tours & Travels logo" src="img/New-Logovery.jpg" />
+          </a>
+        </header>
+      </td>
+      <td align="center" bgcolor="#e8d1d7">
+        <h1 style="color:#8c1937">Aafrin Tours And Travels</h1>
+      </td>
+      <td width=270 align="center" bgcolor="#e8d1d7">
+        <!-- <div align="left">
+
+      </div> -->
+        <div align="center">
+          <form>
+            <div class="login">
+              <label>Username : </label>
+              <input id="username" type="text" placeholder="Enter Username" name="username" required><br>
+              <label>Password : </label>
+              <input id="password" type="password" placeholder="Enter Password" name="password" required><br>
+              &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;<button type="submit" id="b1"
+                onClick="authenticate_login()">Login</button>
+              <button type=" button" id="b2" onClick="authenticate_logout()">Logout</button>
+
+
+            </div>
+          </form>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

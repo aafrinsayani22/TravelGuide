@@ -1,0 +1,267 @@
+
+.section-about {
+    padding: 9.6rem 0;
+  }
+  .country-name {
+    font-size: 8.6rem;
+    font-weight: 600;
+    color: #ddd;
+    margin-bottom: 1.2rem;
+  }
+  .country-description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .country-img-box {
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .country-img-box::before,
+  .country-img-box::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .country-img-box::before {
+    width: 60%;
+    padding-bottom: 60%;
+    background-color: #e8d1d7;
+    z-index: -2;
+  }
+  
+  .country-img-box::after {
+    width: 45%;
+    padding-bottom: 45%;
+    background-color: #c68c9b;
+    z-index: -1;
+  }
+  .country-img {
+    width: 35%;
+  }
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: #F7F7F7;;
+}
+.main-nav-link.nav-cta:link{
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #8c1937;
+}
+.main-nav-link.nav-cta:hover
+{
+  background-color: #7e1732;
+}
+
+.section-trips {
+    padding: 3rem 0;
+  }
+  
+  .trip {
+    box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.075);
+    border-radius: 11px;
+    overflow: hidden;
+    transition: all 0.4s;
+    background-color: #e8d1d7;
+  }
+  
+  .trip:hover {
+    transform: translateY(-1.2rem);
+    box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+  }
+  
+  .trip-content {
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  
+  .trip-tags {
+    margin-bottom: 1.2rem;
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .trip-img {
+    width: 100%;
+}
+  
+  .tag {
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+  
+  .tag--price {
+    background-color: #8c1937;
+  }
+  .tag--rPrice {
+    background-color: #94d82d;
+  }
+  .tag--discount {
+    background-color: #ffd43b;
+  }
+  
+  .trip-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 3.2rem;
+  }
+  
+  .trip-attributes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .trip-attribute {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .feature-icon {
+  color: #8c1937;
+  height: 2.2rem;
+  width: 2.2rem;
+  background-color: #f4e8eb;
+  margin-bottom: 3.2rem;
+  padding: 1rem;
+  border-radius: 50%;
+}
+.feature-title {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+/* isthere */
+.feature-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.section-head {
+    
+    padding: 1.8rem 0 1.8rem 0;
+  }
+  .head {
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+    align-items: center;
+  }
+  .head-description {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem;
+  }
+  
+
+  .meal-icon {
+    height: 2.4rem;
+    width: 2.4rem;
+    color: #8c1937;
+  }
+
+  /**************************/
+/* CTA SECTION */
+/**************************/
+
+.section-cta {
+  /* top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  /* top / horizontal / left */
+  padding: 4.8rem 0 12.8rem;
+}
+
+.cta {
+  display: grid;
+  /* 2/3 = 66.6% + 1/3 = 33.3% */
+  grid-template-columns: 2fr 1fr;
+  /* background-color: #8c1937; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+
+  background-image: linear-gradient(to right bottom, #98304b, #8c1937);
+  overflow: hidden;
+}
+
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #45260a;
+}
+
+.cta .heading-secondary {
+  /* color: #45260a; */
+  color: inherit;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url("../img/eating.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #e8d1d7;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}

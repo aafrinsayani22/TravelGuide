@@ -1,0 +1,256 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- First Name, Last Name
+ Desription:
+ Date:                  -->
+    <title>Content Page</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: large;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .Container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-top: 5%;
+            margin-left: 20%;
+            margin-bottom: 10%;
+            width: 60%;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .Row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .col-25,
+            .col-75,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+    <script>
+        var today = new Date();
+        var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000);
+
+        function checkText() {
+            var patt = /^[a-zA-Z]{4,10}$/;
+            var pemail = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9\.-]+\.[a-z]{2,4}$/;
+            var pphone = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/;
+            //start and end with chars (UPPER or lower) of size 4-6
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            if (patt.test(fname) != true)
+                alert("Hello... " + document.getElementById("fname").value + ". Invalid First Name!");
+            else if (patt.test(lname) != true) // && phone.test(email)) == true)
+                alert("Hello... " + document.getElementById("lname").value + ". Invalid Last Name!");
+            else if (pemail.test(email) != true) // && phone.test(email)) == true)
+                alert("Hello... " + document.getElementById("email").value + ". Invalid Email!");
+            else if (pphone.test(phone) != true) // && phone.test(email)) == true)
+                alert("Hello... " + document.getElementById("phone").value + ". Invalid phone!");
+            else {
+                alert("Valid Inputs! Good Day!")
+            }
+        }
+
+        function greet() {
+            let name = document.querySelector('#fname').value;
+            let people = document.querySelector('#lname').value;
+            let email = document.querySelector('#email').value;
+            let premium = document.querySelector('#phone').value;
+            let event = document.querySelector('#comment').value;
+            if ((fname === '') || (lname === '') || (email === '') || (phone === '') || (comment === '')) {
+                name = 'world! please enter all the requirements.';
+                alert('Hello, ' + name);
+
+            }
+            else {
+                alert('Hello, ' + name + '! Thank you for choosing us! \nIts our pleasure to have you with us. We will respond you to your request/Feedback as soon as possible.');
+            }
+
+
+            function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                let expires = "expires=" + d.toGMTString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            function checkCookie() {
+                let user = getCookie("username");
+                if (user != "") {
+                    alert("Welcome again " + user);
+                } else {
+                    user = prompt("Please enter your name:", "");
+                    if (user != "" && user != null) {
+                        setCookie("username", user, 30);
+                    }
+                }
+            }
+
+
+        }
+
+        function putCookie(form)
+                //this should set the UserName cookie to the proper value;
+  {
+    for (var i = 0; i < 5; i++) {
+        setCookie(form[i].name, form[i].value);
+    //Do something
+}
+//    setCookie("userName", form[0].value);
+   
+    // console.log(form[0].value)
+    return true;
+  }
+  function setCookie(name, value)
+  {
+    document.cookie= escape(name) + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }
+    </script>
+
+
+</head>
+
+
+<body onload="" bgcolor="#e8d1d7">
+
+<div>
+    <div class="Container cta-text-box">
+
+        <form id="feedbackform" >
+            <div class="Row">
+                <div class="col-25">
+                    <label for="fname">First Name:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                </div>
+                <div class="Row">
+                    <div class="col-25">
+                        <label for="lname">Last Name:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    </div>
+                </div>
+                <div class="col-25">
+                    <label for="fname">Phone:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="phone" name="Phone" placeholder="Your Phone..">
+                </div>
+                <div class="col-25">
+                    <label for="fname">E-mail:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="Your E-mail..">
+                </div>
+                <div class="col-25">
+                    <label for="fname">Country Visited:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="visited" name="country" placeholder="Visited country..">
+                </div>
+            </div>
+
+          
+            <div class="Row">
+                <div class="col-25">
+                    <label for="subject">Comment: </label>
+                </div>
+                <div class="col-75">
+                    <textarea id="comment" name="subject" placeholder="Write something.."
+                        style="height:200px"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="Row">
+                <a class="btn btn--full " style="color: #fff; background-color: #8c1937; float: right;" onclick="checkText();greet();putCookie(document.querySelectorAll('#feedbackform input'));" >Submit</a>
+                <a href="cookies.html" target="_blank" style="float: right;" class="btn btn--full margin-right-sm">Get Cookie</a>
+                
+                
+            </div>
+            
+        </form>
+    </div>
+    
+
+
+</body>
+
+</html>
